@@ -51,16 +51,10 @@ const Area = styled.div<IAreaProps>`
 `;
 
 const Form = styled.form`
-  /* width: 100%; */
-  input {
-    /* align-self: center;
-  width: 100%;
-    flex: 1; */
-    width: 100%;
-    margin-right: 10;
-  }
+  /* background-color: black; */
+  /* flex: 1; */
+  display: flex;
 `;
-
 function Board({ toDos, boardId }: IBoardProps) {
   const setToDos = useSetRecoilState(todoState);
   const { register, setValue, handleSubmit } = useForm<IForm>();
@@ -84,6 +78,7 @@ function Board({ toDos, boardId }: IBoardProps) {
       <Title>{boardId}</Title>
       <Form onSubmit={handleSubmit(onValid)}>
         <input
+          style={{ flex: 1 }}
           {...register("toDo", { required: true })}
           type="text"
           placeholder={`Add task on ${boardId}`}
