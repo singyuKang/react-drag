@@ -14,13 +14,14 @@ import GlobalStyle from "./GlobalStyle";
 
 const Wrapper = styled.div`
   display: flex;
+  /* flex: 1; */
   margin: 0 auto;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  flex: 1;
+  /* align-self: stretch; */
 
-  /* background-color: #1bb7b2; */
+  background-color: #1bb7b2;
 `;
 
 const Boards = styled.div`
@@ -34,6 +35,7 @@ const Boards = styled.div`
 
 function App() {
   const [toDos, setToDos] = useRecoilState(todoState);
+  console.log("🚀 ~ file: App.tsx ~ line 37 ~ App ~ toDos", toDos);
 
   const onDragEnd = (info: DropResult) => {
     console.log(info);

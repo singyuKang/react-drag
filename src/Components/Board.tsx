@@ -55,6 +55,7 @@ const Form = styled.form`
   /* flex: 1; */
   display: flex;
 `;
+
 function Board({ toDos, boardId }: IBoardProps) {
   const setToDos = useSetRecoilState(todoState);
   const { register, setValue, handleSubmit } = useForm<IForm>();

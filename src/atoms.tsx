@@ -5,8 +5,16 @@ export interface ITodo {
   text: string;
 }
 
+export interface Counter {
+  id: number;
+}
+
 interface IToDoState {
   [key: string]: ITodo[];
+}
+
+interface CounterState {
+  [key: string]: Counter[];
 }
 
 export const todoState = atom<IToDoState>({
@@ -15,5 +23,12 @@ export const todoState = atom<IToDoState>({
     "To Do": [],
     Doing: [],
     Done: [],
+  },
+});
+
+export const counter = atom<CounterState>({
+  key: "myCounter",
+  default: {
+    counter: [],
   },
 });
